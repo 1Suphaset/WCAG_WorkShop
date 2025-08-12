@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Intentionally poor focus indicators for workshop */
+*:focus {
+  outline: none;
+}
+
+/* Poor contrast colors for workshop */
+.poor-contrast {
+  color: #999999;
+  background-color: #cccccc;
+}
+
+.poor-contrast-text {
+  color: #aaaaaa;
+}
