@@ -22,12 +22,19 @@ function Hero() {
               ประเทศไทย
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">ค้นพบความงามของแผ่นดินสยาม</p>
-          <p className="text-lg text-blue-200 mb-12">Discover the Beauty of the Land of Smiles</p>
+          <p className="text-xl md:text-2xl text-blue-100 mb-8 leading-relaxed">
+            ค้นพบความงามของแผ่นดินสยาม
+          </p>
+          <p className="text-lg text-blue-200 mb-12">
+            Discover the Beauty of the Land of Smiles
+          </p>
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl font-semibold text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+          <button
+            suppressHydrationWarning
+            className="group px-8 py-4 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 rounded-xl font-semibold text-white shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
             <span className="flex items-center space-x-2">
               <span>เริ่มการเดินทาง</span>
               <svg
@@ -36,12 +43,20 @@ function Hero() {
                 stroke="currentColor"
                 viewBox="0 0 24 24"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M13 7l5 5m0 0l-5 5m5-5H6"
+                />
               </svg>
             </span>
           </button>
 
-          <button className="px-8 py-4 border-2 border-white/30 hover:border-white/50 rounded-xl font-semibold text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30">
+          <button
+            suppressHydrationWarning
+            className="px-8 py-4 border-2 border-white/30 hover:border-white/50 rounded-xl font-semibold text-white backdrop-blur-sm hover:bg-white/10 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/30"
+          >
             ดูวิดีโอ
           </button>
         </div>
@@ -70,7 +85,7 @@ function Hero() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

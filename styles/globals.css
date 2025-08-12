@@ -7,6 +7,14 @@
     text-wrap: balance;
   }
 }
+html {
+  font-family: var(--font-sans);
+}
+
+code,
+pre {
+  font-family: var(--font-mono);
+}
 
 @layer base {
   :root {
