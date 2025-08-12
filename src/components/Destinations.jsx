@@ -5,7 +5,8 @@ function Destinations() {
       name: "เชียงใหม่",
       nameEn: "Chiang Mai",
       description: "เมืองโบราณที่เต็มไปด้วยวัดสวยงามและวัฒนธรรมล้านนา",
-      descriptionEn: "Ancient city filled with beautiful temples and Lanna culture",
+      descriptionEn:
+        "Ancient city filled with beautiful temples and Lanna culture",
       image: "/chiang-mai-temple-mountains.png",
       highlights: ["วัดพระธาตุดอยสุเทพ", "ตลาดวอร์กกิ้งสตรีท", "ช้างแสนรู้"],
     },
@@ -13,7 +14,8 @@ function Destinations() {
       name: "ภูเก็ต",
       nameEn: "Phuket",
       description: "เกาะสวรรค์แห่งทะเลอันดามันที่มีหาดทรายขาวสะอาด",
-      descriptionEn: "Paradise island in the Andaman Sea with pristine white beaches",
+      descriptionEn:
+        "Paradise island in the Andaman Sea with pristine white beaches",
       image: "/phuket-beach-clear-water.png",
       highlights: ["หาดป่าตอง", "เกาะพีพี", "วิวพอยต์"],
     },
@@ -21,11 +23,12 @@ function Destinations() {
       name: "อยุธยา",
       nameEn: "Ayutthaya",
       description: "อดีตราชธานีที่เต็มไปด้วยซากปรักหักพังทางประวัติศาสตร์",
-      descriptionEn: "Former capital filled with historical ruins and ancient temples",
+      descriptionEn:
+        "Former capital filled with historical ruins and ancient temples",
       image: "/ayutthaya-buddha-ruins.png",
       highlights: ["วัดมหาธาตุ", "วัดไชยวัฒนาราม", "พระราชวังบางปะอิน"],
     },
-  ]
+  ];
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -35,8 +38,12 @@ function Destinations() {
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
             สถานที่ท่องเที่ยวยอดนิยม
           </h2>
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">ค้นพบจุดหมายปลายทางที่น่าตื่นตาตื่นใจทั่วประเทศไทย</p>
-          <p className="text-lg text-slate-500 mt-2">Discover amazing destinations across Thailand</p>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            ค้นพบจุดหมายปลายทางที่น่าตื่นตาตื่นใจทั่วประเทศไทย
+          </p>
+          <p className="text-lg text-slate-500 mt-2">
+            Discover amazing destinations across Thailand
+          </p>
         </div>
 
         {/* Destinations grid */}
@@ -61,12 +68,18 @@ function Destinations() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-2xl font-bold mb-2 text-slate-800">{dest.name}</h3>
-                <p className="text-slate-600 mb-4 leading-relaxed">{dest.description}</p>
+                <h3 className="text-2xl font-bold mb-2 text-slate-800">
+                  {dest.name}
+                </h3>
+                <p className="text-slate-600 mb-4 leading-relaxed">
+                  {dest.description}
+                </p>
 
                 {/* Highlights */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wide">ไฮไลท์</h4>
+                  <h4 className="text-sm font-semibold text-slate-500 mb-2 uppercase tracking-wide">
+                    ไฮไลท์
+                  </h4>
                   <div className="flex flex-wrap gap-2">
                     {dest.highlights.map((highlight, idx) => (
                       <span
@@ -79,7 +92,10 @@ function Destinations() {
                   </div>
                 </div>
 
-                <button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 group">
+                <button
+                  suppressHydrationWarning
+                  className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 group"
+                >
                   <span className="flex items-center justify-center space-x-2">
                     <span>ดูรายละเอียด</span>
                     <svg
@@ -88,7 +104,12 @@ function Destinations() {
                       stroke="currentColor"
                       viewBox="0 0 24 24"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </span>
                 </button>
@@ -99,13 +120,16 @@ function Destinations() {
 
         {/* Call to action */}
         <div className="text-center mt-16">
-          <button className="px-8 py-4 border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300">
+          <button
+            suppressHydrationWarning
+            className="px-8 py-4 border-2 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white rounded-xl font-semibold transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
             ดูสถานที่ท่องเที่ยวทั้งหมด
           </button>
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Destinations
+export default Destinations;

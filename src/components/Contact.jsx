@@ -1,6 +1,6 @@
-"use client"
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
 // Modern contact section with proper form accessibility
 function Contact() {
@@ -8,20 +8,20 @@ function Contact() {
     name: "",
     email: "",
     message: "",
-  })
+  });
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     // Handle form submission
-    console.log("Form submitted:", formData)
-  }
+    console.log("Form submitted:", formData);
+  };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   return (
     <section className="py-20 bg-white">
@@ -32,21 +32,31 @@ function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-transparent">
               ติดต่อเรา
             </h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">พร้อมให้คำปรึกษาและวางแผนการเดินทางที่ดีที่สุดสำหรับคุณ</p>
-            <p className="text-lg text-slate-500 mt-2">Ready to help plan your perfect Thai adventure</p>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              พร้อมให้คำปรึกษาและวางแผนการเดินทางที่ดีที่สุดสำหรับคุณ
+            </p>
+            <p className="text-lg text-slate-500 mt-2">
+              Ready to help plan your perfect Thai adventure
+            </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Contact form */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-800 mb-6">ส่งข้อความถึงเรา</h3>
+              <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                ส่งข้อความถึงเรา
+              </h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label
+                    htmlFor="name"
+                    className="block text-sm font-semibold text-slate-700 mb-2"
+                  >
                     ชื่อของคุณ *
                   </label>
                   <input
+                    suppressHydrationWarning
                     type="text"
                     id="name"
                     name="name"
@@ -59,10 +69,14 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label
+                    htmlFor="email"
+                    className="block text-sm font-semibold text-slate-700 mb-2"
+                  >
                     อีเมล *
                   </label>
                   <input
+                    suppressHydrationWarning
                     type="email"
                     id="email"
                     name="email"
@@ -75,7 +89,10 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-slate-700 mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-semibold text-slate-700 mb-2"
+                  >
                     ข้อความ *
                   </label>
                   <textarea
@@ -91,12 +108,18 @@ function Contact() {
                 </div>
 
                 <button
+                  suppressHydrationWarning
                   type="submit"
                   className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-300 shadow-lg hover:shadow-xl"
                 >
                   <span className="flex items-center justify-center space-x-2">
                     <span>ส่งข้อความ</span>
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -112,12 +135,19 @@ function Contact() {
             {/* Contact info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">ข้อมูลติดต่อ</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">
+                  ข้อมูลติดต่อ
+                </h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-6 h-6 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -133,7 +163,9 @@ function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">ที่อยู่</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">
+                        ที่อยู่
+                      </h4>
                       <p className="text-slate-600">
                         123 ถนนสุขุมวิท แขวงคลองเตย
                         <br />
@@ -144,7 +176,12 @@ function Contact() {
 
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-6 h-6 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -154,14 +191,21 @@ function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">โทรศัพท์</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">
+                        โทรศัพท์
+                      </h4>
                       <p className="text-slate-600">+66 2 123 4567</p>
                     </div>
                   </div>
 
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg
+                        className="w-6 h-6 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
                         <path
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -171,7 +215,9 @@ function Contact() {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">อีเมล</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">
+                        อีเมล
+                      </h4>
                       <p className="text-slate-600">info@thailandtourism.com</p>
                     </div>
                   </div>
@@ -197,7 +243,7 @@ function Contact() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default Contact
+export default Contact;
