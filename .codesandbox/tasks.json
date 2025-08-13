@@ -15,16 +15,12 @@
     },
     "dev": {
       "name": "dev",
-      "command": "pnpm dev",
+      "command": "pnpm dev --port 4000",
       "runAtStart": true
     },
     "lint": {
       "name": "lint",
       "command": "pnpm lint"
-    },
-    "start": {
-      "name": "start",
-      "command": "pnpm start"
     }
   }
 }

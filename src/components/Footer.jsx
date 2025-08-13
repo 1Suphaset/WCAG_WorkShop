@@ -1,6 +1,6 @@
 // Modern footer with proper semantic HTML and accessibility
 function Footer() {
-  const currentYear = new Date().getFullYear()
+  const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
@@ -21,7 +21,7 @@ function Footer() {
       { name: "เงื่อนไขการใช้งาน", href: "#terms" },
       { name: "ติดต่อเรา", href: "#contact" },
     ],
-  }
+  };
 
   const socialLinks = [
     {
@@ -60,7 +60,7 @@ function Footer() {
         </svg>
       ),
     },
-  ]
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 to-blue-900 text-white">
@@ -78,7 +78,8 @@ function Footer() {
               </div>
             </div>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              ค้นพบความงามของประเทศไทยไปกับเรา พร้อมบริการที่ดีที่สุดและประสบการณ์ที่น่าจดจำ
+              ค้นพบความงามของประเทศไทยไปกับเรา
+              พร้อมบริการที่ดีที่สุดและประสบการณ์ที่น่าจดจำ
             </p>
 
             {/* Social links */}
@@ -160,14 +161,21 @@ function Footer() {
         {/* Newsletter signup */}
         <div className="border-t border-slate-700 pt-8 mb-8">
           <div className="max-w-md mx-auto text-center">
-            <h4 className="font-semibold mb-4 text-blue-200">รับข่าวสารและโปรโมชั่น</h4>
+            <h4 className="font-semibold mb-4 text-blue-200">
+              รับข่าวสารและโปรโมชั่น
+            </h4>
             <div className="flex gap-3">
               <input
+                suppressHydrationWarning
+                suppressHydrationWarning
                 type="email"
                 placeholder="อีเมลของคุณ"
                 className="flex-1 px-4 py-3 bg-white/10 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
               />
-              <button className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400">
+              <button
+                suppressHydrationWarning
+                className="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg font-semibold transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
                 สมัคร
               </button>
             </div>
@@ -176,11 +184,14 @@ function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-slate-700 pt-8 text-center">
-          <p className="text-slate-400">© {currentYear} ท่องเที่ยวไทย. สงวนลิขสิทธิ์ทุกประการ | Made with ❤️ in Thailand</p>
+          <p className="text-slate-400">
+            © {currentYear} ท่องเที่ยวไทย. สงวนลิขสิทธิ์ทุกประการ | Made with ❤️
+            in Thailand
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

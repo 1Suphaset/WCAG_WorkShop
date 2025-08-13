@@ -65,6 +65,7 @@ function Header({ activeSection, onNavigate }) {
 
           {/* Mobile Menu Button */}
           <button
+            suppressHydrationWarning
             onClick={toggleMobileMenu}
             className="md:hidden p-2 rounded-lg text-slate-700 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors duration-200"
             aria-label="Toggle mobile menu"
@@ -108,6 +109,7 @@ function Header({ activeSection, onNavigate }) {
           <div className="bg-white/90 backdrop-blur-sm rounded-xl shadow-lg border border-blue-100 p-4 space-y-2">
             {navItems.map((item) => (
               <button
+                suppressHydrationWarning
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 ${
