@@ -167,7 +167,6 @@ function Footer() {
             <div className="flex gap-3">
               <input
                 suppressHydrationWarning
-                suppressHydrationWarning
                 type="email"
                 placeholder="อีเมลของคุณ"
                 className="flex-1 px-4 py-3 bg-white/10 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
@@ -185,8 +184,8 @@ function Footer() {
         {/* Copyright */}
         <div className="border-t border-slate-700 pt-8 text-center">
           <p className="text-slate-400">
-            © {currentYear} ท่องเที่ยวไทย. สงวนลิขสิทธิ์ทุกประการ | Made with ❤️
-            in Thailand
+            © {currentYear} เว็ปท่องเที่ยวไทย. สำหรับ Workshop การพัฒนาเว็ปไซต์
+            ตามมาตรฐาน WCAG ❤️
           </p>
         </div>
       </div>
