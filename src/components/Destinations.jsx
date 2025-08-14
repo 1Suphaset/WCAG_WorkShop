@@ -1,34 +1,29 @@
 // Modern destinations section with proper accessibility
 function Destinations() {
   const destinations = [
-    {
-      name: "เชียงใหม่",
-      nameEn: "Chiang Mai",
-      description: "เมืองโบราณที่เต็มไปด้วยวัดสวยงามและวัฒนธรรมล้านนา",
-      descriptionEn:
-        "Ancient city filled with beautiful temples and Lanna culture",
-      image: "/chiang-mai-temple-mountains.png",
-      highlights: ["วัดพระธาตุดอยสุเทพ", "ตลาดวอร์กกิ้งสตรีท", "ช้างแสนรู้"],
-    },
-    {
-      name: "ภูเก็ต",
-      nameEn: "Phuket",
-      description: "เกาะสวรรค์แห่งทะเลอันดามันที่มีหาดทรายขาวสะอาด",
-      descriptionEn:
-        "Paradise island in the Andaman Sea with pristine white beaches",
-      image: "/phuket-beach-clear-water.png",
-      highlights: ["หาดป่าตอง", "เกาะพีพี", "วิวพอยต์"],
-    },
-    {
-      name: "อยุธยา",
-      nameEn: "Ayutthaya",
-      description: "อดีตราชธานีที่เต็มไปด้วยซากปรักหักพังทางประวัติศาสตร์",
-      descriptionEn:
-        "Former capital filled with historical ruins and ancient temples",
-      image: "/ayutthaya-buddha-ruins.png",
-      highlights: ["วัดมหาธาตุ", "วัดไชยวัฒนาราม", "พระราชวังบางปะอิน"],
-    },
-  ];
+  {
+    name: "เชียงใหม่",
+    nameEn: "Chiang Mai",
+    altText: "วัดพระธาตุดอยสุเทพและภูเขาในเชียงใหม่ เมืองเก่าแก่แห่งวัฒนธรรมล้านนา",
+    image: "/chiang-mai-temple-mountains.png",
+    highlights: ["วัดพระธาตุดอยสุเทพ", "ตลาดวอร์กกิ้งสตรีท", "ช้างแสนรู้"],
+  },
+  {
+    name: "ภูเก็ต",
+    nameEn: "Phuket",
+    altText: "ชายหาดทรายขาวน้ำทะเลใสในภูเก็ต เกาะสวรรค์แห่งทะเลอันดามัน",
+    image: "/phuket-beach-clear-water.png",
+    highlights: ["หาดป่าตอง", "เกาะพีพี", "วิวพอยต์"],
+  },
+  {
+    name: "อยุธยา",
+    nameEn: "Ayutthaya",
+    altText: "เศียรพระพุทธในรากไม้ วัดมหาธาตุ อยุธยา อดีตราชธานีไทย",
+    image: "/ayutthaya-buddha-ruins.png",
+    highlights: ["วัดมหาธาตุ", "วัดไชยวัฒนาราม", "พระราชวังบางปะอิน"],
+  },
+];
+
 
   return (
     <section className="py-20 bg-gradient-to-br from-slate-50 to-blue-50">
@@ -56,7 +51,6 @@ function Destinations() {
               <div className="relative overflow-hidden">
                 <img
                   src={dest.image || "/placeholder.svg"}
-                  alt={`${dest.name} - ${dest.nameEn}: ${dest.descriptionEn}`}
                   className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

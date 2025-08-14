@@ -17,44 +17,64 @@
 
 ## 1. รูปภาพไม่มี Alt Text
 
-**ปัญหา:** รูปภาพไม่มี `alt` attribute  
+**ปัญหา:** รูปภาพไม่มี `alt` attribute ทำให้ screen reader ไม่สามารถรู้ได้ว่าอ่านรูปอะไรอยู่   
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
-**ตำแหน่งในเว็บ:** Hero section, Destinations cards  
+**ตำแหน่งในเว็บ:** Destinations cards  
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Hero.jsx` (บรรทัดที่ 64)
-- `src/components/Destinations.jsx` (บรรทัดที่ 32)  
+- `src/components/Destinations.jsx` (บรรทัดที่ 52)  
   **วิธีแก้:**
 
 ```jsx
+// ตัวอย่าง ข้อมูล
+  const destinations = [
+  {
+    name: "เชียงใหม่",
+    nameEn: "Chiang Mai",
+    altText: "วัดพระธาตุดอยสุเทพและภูเขาในเชียงใหม่ เมืองเก่าแก่แห่งวัฒนธรรมล้านนา", 
+    image: "/chiang-mai-temple-mountains.png",
+    highlights: ["วัดพระธาตุดอยสุเทพ", "ตลาดวอร์กกิ้งสตรีท", "ช้างแสนรู้"],
+  },
+  ...
+];
 // ❌ ผิด
-<img src="image.jpg" />
+<img
+  src={dest.image || "/placeholder.svg"}
+  alt={dest.altText}
+  className="..."
+/>
 
 // ✅ ถูก
-<img src="image.jpg" alt="วัดพระแก้วในกรุงเทพฯ" />
+<img
+  src={dest.image || "/placeholder.svg"}
+  alt={dest.altText} // <----- เพิ่ม บรรทัดนี้
+  className="..."
+/>
 ```
 
 ## 2. สีที่มี Contrast ต่ำเกินไป
 
 **ปัญหา:** ข้อความสีเทาบนพื้นหลังขาว (ratio < 4.5:1)  
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา, ผู้มีความบกพร่องด้านการมองเห็นสี
-**ตำแหน่ง:** Navigation, Title  
+**ตำแหน่ง:** ข้อมูล สถิติ
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Header.jsx` (บรรทัดที่ 64)
-- `src/components/Hero.jsx` (บรรทัดที่ 32)  
+- `src/components/Hero.jsx` (บรรทัดที่ 56)  
   **วิธีแก้:**
 
-```css
-/* ❌ ผิด - contrast ratio 2.3:1 */
-.poor-contrast-text {
-  color: #aaaaaa;
-}
+```jsx
+// ❌ ผิด - contrast ratio 2.69:1
+<div
+  style={{ color: "#5C7EDB" }}
+  className="..."
+>
 
-/* ✅ ถูก - contrast ratio 7:1 */
-.good-contrast-text {
-  color: #333333;
-}
+// ✅ ถูก - contrast ratio 7:1
+<div
+  style={{ color: "#DDE4F9" }}
+  className="..."
+>
+
 ```
 
 ## 3. Form ไม่มี Label
