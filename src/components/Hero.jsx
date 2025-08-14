@@ -11,20 +11,20 @@ function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto w-full px-6 flex flex-col md:flex-row items-center md:items-stretch gap-12">
         {/* Left content */}
         <div className="flex-1 max-w-xl text-white text-center md:text-left">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
+          <h4 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-6 leading-tight">
             <span className="block bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
               ยินดีต้อนรับสู่
             </span>
             <span className="block bg-gradient-to-r from-blue-200 to-white bg-clip-text text-transparent">
               ประเทศไทย
             </span>
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-4 md:mb-8 leading-relaxed">
+          </h4>
+          <h1 className="text-lg sm:text-xl md:text-2xl text-blue-100 mb-4 md:mb-8 leading-relaxed">
             ค้นพบความงามของแผ่นดินสยาม
-          </p>
-          <p className="text-base sm:text-lg md:text-lg text-blue-200 mb-8 md:mb-12">
+          </h1>
+          <h2 className="text-base sm:text-lg md:text-lg text-blue-200 mb-8 md:mb-12">
             Discover the Beauty of the Land of Smiles
-          </p>
+          </h2>
 
           {/* Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start items-center md:items-start mb-12">

@@ -90,7 +90,6 @@ function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    aria-label={`ติดตาม ${social.name}`}
                     className="w-10 h-10 bg-white/10 hover:bg-blue-500 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   >
                     {social.icon}

@@ -49,12 +49,6 @@ function Contact() {
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
-                  >
-                    ชื่อของคุณ *
-                  </label>
                   <input
                     suppressHydrationWarning
                     type="text"
@@ -69,12 +63,6 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
-                  >
-                    อีเมล *
-                  </label>
                   <input
                     suppressHydrationWarning
                     type="email"
@@ -89,12 +77,6 @@ function Contact() {
                 </div>
 
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-sm font-semibold text-slate-700 mb-2"
-                  >
-                    ข้อความ *
-                  </label>
                   <textarea
                     id="message"
                     name="message"

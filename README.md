@@ -21,7 +21,6 @@
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
 **ตำแหน่งในเว็บ:** Destinations cards  
 **ไฟล์ที่มีปัญหา:**
-
 - `src/components/Destinations.jsx` (บรรทัดที่ 52)  
   **วิธีแก้:**
 
@@ -61,15 +60,16 @@
   **วิธีแก้:**
 
 ```jsx
+
 // ❌ ผิด - contrast ratio 2.69:1
 <div
-  style={{ color: "#5C7EDB" }}
+  style={{ color: "#5C7EDB" }} // สีฟ้า
   className="..."
->
+> 
 
 // ✅ ถูก - contrast ratio 7:1
-<div
-  style={{ color: "#DDE4F9" }}
+<div 
+  style={{ color: "#DDE4F9" }} //สีฟ้าอ่อน
   className="..."
 >
 
@@ -77,13 +77,15 @@
 
 ## 3. Form ไม่มี Label
 
-**ปัญหา:** Input fields ไม่มี label หรือ aria-label  
+**ปัญหา:** Input fields ไม่มี label หรือ aria-label ทำให้ ไม่รู้ว่าช่องนี้ต้องกรอกอะไร    
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
 **ตำแหน่ง:** Contact form  
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Contact.jsx` (บรรทัดที่ 64)  
-  **วิธีแก้:**
+- `src/components/Contact.jsx` (บรรทัดที่ 52)  
+- `src/components/Contact.jsx` (บรรทัดที่ 66)  
+- `src/components/Contact.jsx` (บรรทัดที่ 80)  
+  **หลักการ:**
 
 ```jsx
 // ❌ ผิด
@@ -93,19 +95,46 @@
 <label htmlFor="name">ชื่อของคุณ</label>
 <input type="text" id="name" placeholder="ชื่อของคุณ" />
 
-// หรือ
-<input type="text" aria-label="ชื่อของคุณ" placeholder="ชื่อของคุณ" />
+``` 
+  **วิธีแก้:**
+- ให้วาง โค้ด aria-rabel ส่วนที่ถูกต้อง บนส่วนที่มีปัญหา ก่อนบรรทัด "<input ...>"   
+
+```jsx
+// โค้ด aria-rabel
+  // สำหรับ ชื่อ
+ <label
+    htmlFor="name"
+    className="block text-sm font-semibold text-slate-700 mb-2"
+  >
+    ชื่อของคุณ *
+  </label>
+  
+  // สำหรับ อีเมล
+  <label
+    htmlFor="email"
+    className="block text-sm font-semibold text-slate-700 mb-2"
+  >
+    อีเมล *
+  </label>
+
+  // สำหรับ ข้อความ
+  <label
+    htmlFor="message"
+    className="block text-sm font-semibold text-slate-700 mb-2"
+  >
+    ข้อความ *
+  </label>
+
 ```
 
 ## 4. โครงสร้าง Heading ผิดลำดับ
 
-**ปัญหา:** ข้าม heading levels (h1 → h4, h5 → h2)  
+**ปัญหา:** เนื้อหาในหน้าแรกมีการข้าม heading levels (h1 → h4, h5 → h2) ซึ่งเรียงลำดับความสำคัญไม่ถูกต้อง    
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
-**ตำแหน่ง:** Hero section, Destinations  
+**ตำแหน่ง:** Hero section
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Hero.jsx` (บรรทัดที่ 64)
-- `src/components/Destinations.jsx` (บรรทัดที่ 32)  
+- `src/components/Hero.jsx` (บรรทัดที่ 14 - 27)
   **วิธีแก้:**
 
 ```jsx
@@ -114,8 +143,11 @@
 <h1>หัวข้อรอง</h1>
 
 // ✅ ถูก
+// ลำดับความสำคํญ ที่ถูกต้อง (h1 → h2 → h3 → h4 → h5)
 <h1>หัวข้อหลัก</h1>
 <h2>หัวข้อรอง</h2>
+
+
 ```
 
 ## 5. ไม่มี Focus Indicators
@@ -125,8 +157,7 @@
 **ตำแหน่ง:** ทุก interactive elements  
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Hero.jsx` (บรรทัดที่ 64)
-- `src/components/Destinations.jsx` (บรรทัดที่ 32)  
+- `src\index.css` (บรรทัดที่ 6)  
   **วิธีแก้:**
 
 ```css
@@ -142,47 +173,35 @@
 }
 ```
 
-## 6. ใช้ Div แทน Semantic Elements
-
-**ปัญหา:** ใช้ `<div>` แทน `<nav>`, `<header>`, `<footer>`  
-**ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
-**ตำแหน่ง:** Header, Footer components  
-**ไฟล์ที่มีปัญหา:**
-
-- `src/components/Hero.jsx` (บรรทัดที่ 64)
-- `src/components/Destinations.jsx` (บรรทัดที่ 32)  
-  **วิธีแก้:**
-
-```jsx
-// ❌ ผิด
-<div className="header">
-  <div>Navigation items</div>
-</div>
-
-// ✅ ถูก
-<header>
-  <nav>Navigation items</nav>
-</header>
-```
-
-## 7. ปุ่ม Icon-only ไม่มี Accessible Name
+## 6. ปุ่ม Icon-only ไม่มี Accessible Name
 
 **ปัญหา:** Social media icons ไม่มีข้อความอธิบาย  
 **ช่วยผู้พิการกลุ่ม:** ผู้พิการทางสายตา ใช้ screen reader  
 **ตำแหน่ง:** Footer social icons  
 **ไฟล์ที่มีปัญหา:**
 
-- `src/components/Footer.jsx` (บรรทัดที่ 64)
+- `src/components/Footer.jsx` (บรรทัดที่ 90)
   **วิธีแก้:**
 
 ```jsx
-// ❌ ผิด
-<div className="social-icon"></div>
+// ❌ ผิด ไม่มี aria-label บอกว่าปุ่มนั้นๆคืออะไร
+<a
+  key={social.name}
+  aria-label={`ติดตาม ${social.name}`}
+  className="..."
+>
+  {social.icon}
+</a>
 
 // ✅ ถูก
-<button aria-label="ติดตาม Facebook">
-  <FacebookIcon />
-</button>
+<a
+  key={social.name}
+  href={social.href} // // <----- เพิ่ม บรรทัดนี้
+  aria-label={`ติดตาม ${social.name}`}
+  className="..."
+>
+  {social.icon}
+</a>
 ```
 
 ---
